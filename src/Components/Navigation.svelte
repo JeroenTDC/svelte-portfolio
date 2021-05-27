@@ -1,32 +1,17 @@
 <script>
-  //import data from "./items.json";
   import About from "../Pages/About/About.svelte";
   import Address from "../Pages/Address/Address.svelte";
 
-  let data = {
-    pages: [
-      {
-        title: "About us",
-        path: "About",
-      },
-      {
-        title: "Our address",
-        path: "Address",
-      },
-    ],
-  };
+  const pages = [
+    { color: "about", component: About },
+    { color: "adress", component: Address },
+  ];
 
-  let renderedPage = Address;
-
-  function selectPage() {
-    renderedPage === Address ? About : Address;
-  }
+  let selected = pages[0];
 </script>
 
-<div>
-  {#each data.pages as page}
-  <button on:click="{selectPage}">{page.path}</button>
-  {/each}
-</div>
+{#each pages as page}
+<a on:click="{() => selected = page}" href="#">{page.color}</a>
+{/each}
 
-<svelte:component this="{renderedPage}" />
+<svelte:component this="{selected.component}" />

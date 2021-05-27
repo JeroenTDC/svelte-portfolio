@@ -1,5 +1,5 @@
 <script>
-	import Navigation from './Components/Navigation2.svelte';
+	import Navigation from './Components/Navigation.svelte';
 	export let name;
 </script>
 
