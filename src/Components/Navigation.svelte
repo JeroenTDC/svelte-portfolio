@@ -12,8 +12,10 @@
   let selected = pages[0];
 </script>
 
-{#each pages as page}
-<a on:click="{() => selected = page}" href="#">{page.color}</a>
-{/each}
+<nav>
+  {#each pages as page}
+  <a on:click="{() => selected = page}" href="#">{page.color}</a>
+  {/each}
+</nav>
 
 <svelte:component this="{selected.component}" />

@@ -6,7 +6,18 @@
 <Navigation/>
 
 <style>
-	main {
+	:global(nav, nav a, nav a:hover) {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		font-size: 1.6rem;
+		color:rgba(0,0,0,0.45);
+		font-weight: 700;
+		text-decoration: none;
+		padding: 0.5em;
+	}
+
+	:global(main) {
 		text-align: center;
 		padding: 1em;
 		max-width: 240px;
