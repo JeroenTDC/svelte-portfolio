@@ -1,19 +1,19 @@
 <script context="module">
-	export let DivHeight;
+	export let divHeight = 0;
 </script>
 
 <script>
 	import { fly } from 'svelte/transition';
 	export let refresh = '';
-
+	
 	const onload = (el) => {
 		console.log(el.clientHeight);
-		DivHeight = el.clientHeight;
+		divHeight = el.clientHeight;
 	};
 </script>
 
 {#key refresh}
-	<div use:onload in:fly={{ x: 100, duration: 500 }} out:fly={{ x: -100, duration: 500 }}>
+	<div use:onload in:fly={{ x: 100, duration: 500 }} out:fly|local={{ x: -100, duration: 500 }}>
 		<slot />
 	</div>
 {/key}

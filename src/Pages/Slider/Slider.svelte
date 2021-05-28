@@ -1,13 +1,13 @@
 <script>
   import { data } from "./items.svelte";
-  import Slide, { DivHeight } from "./Slide.svelte";
+  import Slide, { divHeight } from "./Slide.svelte";
   import { onMount } from "svelte";
   import Card from "./Card.svelte";
 
   let sliderHeight;
   let sliderHeightMultiplier = 1.5;
   onMount(() => {
-    sliderHeight = DivHeight * sliderHeightMultiplier + "px";
+    sliderHeight = divHeight * sliderHeightMultiplier + "px";
     console.log(sliderHeight);
   });
 
