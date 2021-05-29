@@ -81,6 +81,10 @@ nav .navTitle span {
     text-transform: none;
     font-weight: normal;
 }
+nav .navTitle a {
+    text-transform: capitalize;
+    font-weight: 700;
+}
 
 nav .navTitle span::after {
     content: "|";
