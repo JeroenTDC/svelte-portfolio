@@ -41,7 +41,15 @@ let selected = pages[0];
     <div class=navContents>
         <ul class="menu">
             {#each pages as page}
-            <li><a on:click|preventDefault="{() => selected = page}" href="/">{page.title}</a></li>
+            <li><a on:click|preventDefault="{() => selected = page}" href="/">{page.title}</a>
+                {#if page.posts}
+                <ul class="subMenu">
+                    {#each page.posts as post}
+                    <li><a on:click|preventDefault="{() => selected = post}" href="/">{post.title}</a></li>
+                    {/each}
+                </ul>
+                {/if}
+            </li>
             {/each}
         </ul>
     </div>
@@ -102,5 +110,28 @@ nav a {
 
 .menu li {
     position: relative;
+}
+
+.subMenu {
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    right: 0;
+    list-style: none;
+    width: max-content;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-left: 1px solid rgba(0,0,0,0.1);
+    padding:0.5em;
+    z-index: 1;
+}
+
+.subMenu a,
+.subMenu a:hover {
+    opacity: 0.85;
+    padding: 1em;
+    font-size: 1.4rem;
+}
+
+.subMenu a:hover {
+    opacity: 1
 }
 </style>

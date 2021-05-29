@@ -1,71 +1,79 @@
 <script>
-  import { data } from "./items.svelte";
-  import Slide, { divHeight } from "./Slide.svelte";
-  import { onMount } from "svelte";
-  import Card from "./Card.svelte";
+import {
+    data
+} from "./items.svelte";
+import Slide, {
+    divHeight
+} from "./Slide.svelte";
+import {
+    onMount
+} from "svelte";
+import Card from "./Card.svelte";
 
-  let sliderHeight;
-  let sliderHeightMultiplier = 1.5;
-  onMount(() => {
+let sliderHeight;
+let sliderHeightMultiplier = 1.5;
+
+onMount(() => {
     sliderHeight = divHeight * sliderHeightMultiplier + "px";
     console.log(sliderHeight);
-  });
+});
 
-  export let key;
+export let key;
 
-  let slides = [];
+let slides = [];
 
-  let slideCounter = 0;
+let slideCounter = 0;
 
-  const nextSlide = () => {
+const nextSlide = () => {
     if (slideCounter < data.length - 1) {
-      slideCounter++;
+        slideCounter++;
     } else {
-      slideCounter = 0;
+        slideCounter = 0;
     }
     slides = [data[slideCounter]];
     key = [data[slideCounter]];
-  };
-  const previousSlide = () => {
+};
+const previousSlide = () => {
     if (slideCounter === 0) {
-      slideCounter = data.length;
+        slideCounter = data.length;
     }
     slideCounter--;
     slides = [data[slideCounter]];
     key = [data[slideCounter]];
-  };
+};
 
-  nextSlide();
+nextSlide();
 </script>
 
 <p>Current slide: {slideCounter}</p>
-<button on:click="{nextSlide}">Next slide</button>
 <button on:click="{previousSlide}">Previous slide</button>
+<button on:click="{nextSlide}">Next slide</button>
 
 <div class="slider" style="--height:{sliderHeight}">
-  {#each slides as slide}
-  <Slide refresh="{key}">{slide.question}</Slide>
-  {/each}
+    {#each slides as slide}
+    <Slide refresh="{key}">{slide.question}</Slide>
+    {/each}
 </div>
 
 <div class="data">
-  {#each data as slide}
-  <Card>{slide.question}</Card>
-  {/each}
+    {#each data as slide}
+    <Card>{slide.question}</Card>
+    {/each}
 </div>
 
 <style>
-  .data {
+.data {
     border-top: 1px solid #333;
     padding-top: 2em;
     margin-top: 2em;
     opacity: 0.35;
-  }
-  .slider {
+}
+
+.slider {
     display: flex;
     justify-content: center;
     overflow: visible;
     position: relative;
     height: var(--height);
-  }
+}
 </style>
