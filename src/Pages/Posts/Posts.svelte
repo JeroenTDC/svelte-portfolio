@@ -1,3 +1,8 @@
+<script>
+  //import Menu from "./Menu.svelte";
+  import Iframe from "./Iframe.svelte";
+</script>
+
 <main>
   <h1>Posts</h1>
   <p>
@@ -5,3 +10,5 @@
     how to build Svelte apps.
   </p>
 </main>
+
+<Iframe/>

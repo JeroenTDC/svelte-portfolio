@@ -1,10 +1,10 @@
 <script>
-import About from "../Pages/About/About.svelte";
-import Projects from "../Pages/Projects/Projects.svelte";
-import Slider from "../Pages/Slider/Slider.svelte";
-import Contact from "../Pages/Contact/Contact.svelte";
-import Posts from "../Pages/Posts/Posts.svelte";
-import PostSvelteUnclosedElement from "../Pages/Posts/Svelte-unclosed-element.svelte";
+import About from "../../Pages/About/About.svelte";
+import Projects from "../../Pages/Projects/Projects.svelte";
+import Slider from "../../Pages/Slider/Slider.svelte";
+import Contact from "../../Pages/Contact/Contact.svelte";
+import Posts from "../../Pages/Posts/Posts.svelte";
+import PostSvelteUnclosedElement from "../../Pages/Posts/Svelte-unclosed-element.svelte";
 
 const pages = [{
         title: "About me",
