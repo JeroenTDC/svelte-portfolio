@@ -12,6 +12,8 @@
 	
 	let promise = getStackBookmarks();
 
+	console.log(promise);
+
 </script>
 
 <div class="card">
@@ -21,6 +23,7 @@
 	<p>...waiting</p>
 {:then bookmarks}
     {#each bookmarks.items as item}
+	<p>{item.date}</p>
          <p><a href={item.link} target="new">{item.title}</a></p>
     {/each}
 {:catch error}

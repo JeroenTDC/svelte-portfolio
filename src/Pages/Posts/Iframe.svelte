@@ -10,7 +10,7 @@ import {
 } from 'svelte/easing';
 import Menu from './Menu.svelte';
 
-const iframeWidth = tweened(300, {
+const iframeWidth = tweened(50, {
     duration: 800,
     easing: backInOut
 });
@@ -20,13 +20,13 @@ const iframeHeight = tweened(600, {
 });
 
 function toggleIframeSize() {
-    $iframeWidth === 300 ? iframeWidth.set(600) : iframeWidth.set(300);
+    $iframeWidth === 50 ? iframeWidth.set(100) : iframeWidth.set(500);
     $iframeHeight === 600 ? iframeHeight.set(300) : iframeHeight.set(600);
 }
 
 function autoToggleIframeSize() {
     setTimeout(function() {
-        $iframeWidth === 300 ? iframeWidth.set(600) : iframeWidth.set(300);
+        $iframeWidth === 50 ? iframeWidth.set(100) : iframeWidth.set(50);
         $iframeHeight === 600 ? iframeHeight.set(300) : iframeHeight.set(600);
     }, 2000);
     setTimeout(autoToggleIframeSize, 4000);
@@ -39,7 +39,7 @@ setTimeout(autoToggleIframeSize, 2000);
 
 <button on:click={toggleIframeSize}>Toggle</button>
 <div class="iframe">
-<iframe src="https://www.svelte.dev" scrolling="no" frameborder="0" title="iframe" style="width: {$iframeWidth}px; height: {$iframeHeight}px;"/>
+<iframe src="https://www.nettalk.dk/kundeservice/service.asp" scrolling="no" frameborder="0" title="iframe" style="width: {$iframeWidth}%; height: {$iframeHeight}px;"/>
 </div>
 <style>
 iframe {
