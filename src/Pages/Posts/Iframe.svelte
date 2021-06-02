@@ -38,11 +38,12 @@ setTimeout(autoToggleIframeSize, 2000);
 </script>
 
 <button on:click={toggleIframeSize}>Toggle</button>
-
-<iframe src="http://www.svelte.dev" frameborder="0" title="iframe" style="width: {$iframeWidth}px; height: {$iframeHeight}px;"/>
-
+<div class="iframe">
+<iframe src="https://www.svelte.dev" scrolling="no" frameborder="0" title="iframe" style="width: {$iframeWidth}px; height: {$iframeHeight}px;"/>
+</div>
 <style>
 iframe {
     display: flex;
 }
+.iframe {padding: 3em; background-color: rgba(0,0,0,0.1);}
 </style>

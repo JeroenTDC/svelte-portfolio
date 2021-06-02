@@ -1,6 +1,7 @@
 <script>
   //import Menu from "./Menu.svelte";
   import Iframe from "./Iframe.svelte";
+  import Stack from "./Stackoverflow.svelte";
 </script>
 
 <main>
@@ -12,3 +13,5 @@
 </main>
 
 <Iframe/>
+
+<Stack/>
