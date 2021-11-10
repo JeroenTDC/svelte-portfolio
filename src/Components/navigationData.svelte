@@ -1,5 +1,5 @@
 <script context="module">
-export const pages = [{
+export const pages = [/* {
         title: "About me",
         slug: "/about-me",
         component: About
@@ -8,7 +8,7 @@ export const pages = [{
         title: "Projects",
         slug: "/projects",
         component: Projects
-    },
+    }, */
     {
         title: "Contact me",
         slug: "/contact-me",

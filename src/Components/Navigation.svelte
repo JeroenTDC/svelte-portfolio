@@ -3,12 +3,13 @@ import About from "../Pages/About/About.svelte";
 import Projects from "../Pages/Projects/Projects.svelte";
 import Slider from "../Pages/Slider/Slider.svelte";
 import Contact from "../Pages/Contact/Contact.svelte";
+import Index from "../Pages/Index/Index.svelte";
 import Posts from "../Pages/Posts/Posts.svelte";
 import PostSvelteUnclosedElement from "../Pages/Posts/Svelte-unclosed-element.svelte";
 
 console.log(window.location.pathname);
 
-const pages = [{
+const pages = [/* {
         title: "About me",
         slug: "/about-me",
         component: About
@@ -17,11 +18,17 @@ const pages = [{
         title: "Projects",
         slug: "/projects",
         component: Projects
+    }, */
+    {
+        title: "Index",
+        slug: "/",
+        component: Index,
+        class: "hidden"
     },
     {
         title: "Contact me",
         slug: "/contact-me",
-        component: Contact
+        component: Contact,
     },
     {
         title: "Posts",
@@ -57,11 +64,11 @@ function switchPage(pageVal) {
 </script>
 
 <nav>
-    <div class="navTitle"><a on:click|preventDefault="{() => selected = pages[0]}" href="/"><span>happycoder.dk</span>Jeroen Stolk</a></div>
+    <div class="navTitle"><a on:click|preventDefault="{() => selected = pages[0]}" href="/">Jeroen Stolk<span>Frontend developer</span></a></div>
     <div class=navContents>
         <ul class="menu">
             {#each pages as page, idx}
-            <li><a on:click|preventDefault="{() => switchPage(page)}" href="/">{page.title}</a></li>
+                 <li><a on:click|preventDefault="{() => switchPage(page)}" href="/" class={page.class}>{page.title}</a></li>
             {/each}
         </ul>
     </div>
@@ -70,12 +77,15 @@ function switchPage(pageVal) {
 <svelte:component this="{selected.component}" />
 
 <style>
+    .hidden {
+        display: none;
+    }
 nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: #333;
-    background-color: #fff;
+    background-color: #1d4eb4;
     border-bottom: 1px solid #e2e2e2;
     z-index: 1;
 }
@@ -93,6 +103,7 @@ nav .navContents {
 nav .navTitle span {
     text-transform: none;
     font-weight: normal;
+    opacity: 0.5;
 }
 
 nav .navTitle a {
@@ -100,16 +111,16 @@ nav .navTitle a {
     font-weight: 700;
 }
 
-nav .navTitle span::after {
+nav .navTitle span::before {
     content: "|";
     margin: 0 0.5em;
-    opacity: 0.65;
+    opacity: 0.55;
 }
 
 nav a {
     display: flex;
     flex-direction: row;
-    color: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
     padding: 1.5em;
     font-weight: 700;
