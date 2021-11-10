@@ -20,14 +20,14 @@ const iframeHeight = tweened(600, {
 });
 
 function toggleIframeSize() {
-    $iframeWidth === 50 ? iframeWidth.set(100) : iframeWidth.set(500);
-    $iframeHeight === 600 ? iframeHeight.set(300) : iframeHeight.set(600);
+    $iframeWidth === 50 ? iframeWidth.set(100) : iframeWidth.set(50);
+    $iframeHeight === 600 ? iframeHeight.set(600) : iframeHeight.set(600);
 }
 
 function autoToggleIframeSize() {
     setTimeout(function() {
         $iframeWidth === 50 ? iframeWidth.set(100) : iframeWidth.set(50);
-        $iframeHeight === 600 ? iframeHeight.set(300) : iframeHeight.set(600);
+        $iframeHeight === 600 ? iframeHeight.set(600) : iframeHeight.set(600);
     }, 2000);
     setTimeout(autoToggleIframeSize, 4000);
 }
@@ -45,5 +45,6 @@ setTimeout(autoToggleIframeSize, 2000);
 iframe {
     display: flex;
 }
-.iframe {padding: 3em; background-color: rgba(0,0,0,0.1);}
+.iframe {padding: 3em; background-color: rgba(0,0,0,0.1);
+max-width: 1200px;}
 </style>
