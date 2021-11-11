@@ -16,6 +16,6 @@ import Navigation from './Components/Navigation.svelte';
     main {
         max-width: none;
     }
-    footer {display: flex; border-top:1px solid rgba(255,255,255,0.15); justify-content: center; margin: 5em 0; padding-top: 2em;}
+    footer {clear: both; display: flex; border-top:1px solid rgba(255,255,255,0.15); justify-content: center; margin: 5em 0; padding-top: 2em;}
 }
 </style>
