@@ -23,7 +23,6 @@
 	<p>...waiting</p>
 {:then bookmarks}
     {#each bookmarks.items as item}
-	<p>{item.date}</p>
          <p><a href={item.link} target="new">{item.title}</a></p>
     {/each}
 {:catch error}
@@ -31,4 +30,7 @@
 {/await}
 </div>
 
-<style>.card {flex-direction: column; border: 1px solid rgba(0,0,0,0.1); margin: 1em; padding: 2em; display: flex; }</style>
+<style>.card {flex-direction: column; border: 1px solid rgba(0,0,0,0.1); margin: 1em; padding: 2em; display: flex; }
+p {margin:0.5em 0}
+
+</style>

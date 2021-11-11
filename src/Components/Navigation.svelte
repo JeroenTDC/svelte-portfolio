@@ -1,6 +1,6 @@
 <script>
-import About from "../Pages/About/About.svelte";
-import Projects from "../Pages/Projects/Projects.svelte";
+/* import About from "../Pages/About/About.svelte";
+import Projects from "../Pages/Projects/Projects.svelte"; */
 import Slider from "../Pages/Slider/Slider.svelte";
 import Contact from "../Pages/Contact/Contact.svelte";
 import Index from "../Pages/Index/Index.svelte";
@@ -86,7 +86,7 @@ nav {
     justify-content: space-between;
     background-color: #333;
     background-color: #1d4eb4;
-    border-bottom: 1px solid #e2e2e2;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     z-index: 1;
 }
 
