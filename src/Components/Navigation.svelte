@@ -3,9 +3,11 @@
 import Projects from "../Pages/Projects/Projects.svelte"; */
 import Slider from "../Pages/Slider/Slider.svelte";
 import Contact from "../Pages/Contact/Contact.svelte";
+import OnePager from "../Pages/Posts/OnePager.svelte";
 import Index from "../Pages/Index/Index.svelte";
 import Posts from "../Pages/Posts/Posts.svelte";
 import PostSvelteUnclosedElement from "../Pages/Posts/Svelte-unclosed-element.svelte";
+import Gsap from "../Pages/Posts/Gsap.svelte";
 
 console.log(window.location.pathname);
 
@@ -21,8 +23,10 @@ const pages = [/* {
     }, */
     {
         title: "Index",
+        //slug: "/",
         slug: "/",
-        component: Index,
+        //component: Index,
+        component: Gsap,
         class: "hidden"
     },
     {
@@ -30,6 +34,11 @@ const pages = [/* {
         slug: "/contact-me",
         component: Contact,
     },
+    {
+                title: "GSAP - First try",
+                slug: "/posts/gsap",
+                component: Gsap
+            },
     {
         title: "Posts",
         slug: "/posts",
@@ -43,6 +52,11 @@ const pages = [/* {
                 title: "Svelte unclosed element",
                 slug: "/posts/unclosed",
                 component: PostSvelteUnclosedElement
+            },
+            {
+                title: "GSAP - First try",
+                slug: "/posts/gsap",
+                component: Gsap
             },
         ]
     }
@@ -64,7 +78,7 @@ function switchPage(pageVal) {
 </script>
 
 <nav>
-    <div class="navTitle"><a on:click|preventDefault="{() => selected = pages[0]}" href="/">Jeroen Stolk<span>Frontend developer</span></a></div>
+    <div class="navTitle"><a on:click|preventDefault="{() =>  switchPage(pages[0])}" href="/">Jeroen Stolk<span>Frontend developer</span></a></div>
     <div class=navContents>
         <ul class="menu">
             {#each pages as page, idx}
