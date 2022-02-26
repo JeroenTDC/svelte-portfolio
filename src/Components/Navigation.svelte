@@ -11,6 +11,12 @@
 
   const pages = [
     {
+      title: "Index",
+      slug: "/",
+      component: Index,
+      class: "hidden",
+    },
+    {
       title: "About me",
       slug: "/about-me",
       component: About,
@@ -19,12 +25,6 @@
       title: "Projects",
       slug: "/projects",
       component: Projects,
-    },
-    {
-      title: "Index",
-      slug: "/",
-      component: Index,
-      class: "hidden",
     },
     {
       title: "Contact me",
